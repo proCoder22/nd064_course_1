@@ -1,0 +1,10 @@
+
+apiVersion: v1
+name: techtrends
+description: Install Techtrends
+keywords:
+- techtrends 
+version: 1.0.0
+maintainers:
+- name: Vinit 
+  email: ashervinit@yahoo.com

@@ -1,0 +1,37 @@
+namespace:
+  name: sandbox
+
+image:
+  repository:
+    vinit747/techtrends
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+service:
+  port: 4111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+
+resources:
+  requests:
+    memory: 64Mi
+    CPU: 250m
+  limits:
+    memory: 128Mi
+    CPU: 500m
+
+ports:
+  - containerPort: 3111
+
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: {{.ports.containerPort}}
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: {{.ports.containerPort}}

@@ -1,0 +1,36 @@
+namespace:
+  name: prod
+
+image:
+  repository:
+    vinit747/techtrends
+  tag: latest
+  pullPolicy: Always
+
+replicaCount: 5
+
+service:
+  port: 7111
+  protocol: TCP
+  type: ClusterIP
+
+resources:
+  requests:
+    memory: 120Mi
+    CPU: 350m
+  limits:
+    memory: 256Mi
+    CPU: 500m
+
+ports:
+  - containerPort: 3111
+
+livenessProbe:
+  httpGet:
+    path: /healthz
+    port: containerPort
+
+readinessProbe:
+  httpGet:
+    path: /healthz
+    port: containerPort
