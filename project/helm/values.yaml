@@ -29,9 +29,9 @@ ports:
 livenessProbe:
   httpGet:
     path: /healthz
-    port: {{.ports.containerPort}}
+    port: 3111
 
 readinessProbe:
   httpGet:
     path: /healthz
-    port: {{.ports.containerPort}}
+    port: 3111
