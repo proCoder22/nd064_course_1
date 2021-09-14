@@ -23,7 +23,7 @@ resources:
     CPU: 500m
 
 ports:
-  - containerPort: 3111
+  containerPort: 3111
 
 livenessProbe:
   httpGet:

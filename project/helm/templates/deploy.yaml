@@ -20,11 +20,11 @@ spec:
       - image: {{.Values.image.repository}}
         name: techtrends
         ports:
-        - containerPort: {{.Values.ports.containerPort}}
+        - containerPort: {{ .Values.ports.containerPort }}
         livenessProbe:
           httpGet:
             path: /healthz
-            port: {{.Values.ports.containerPort}}
+            port: {{ .Values.ports.containerPort }}
         readinessProbe:
           httpGet:
             path: /healthz
